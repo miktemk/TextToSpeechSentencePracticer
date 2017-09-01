@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using Miktemk.TextToSpeech.Core;
+using Miktemk.TextToSpeech.Services;
 using System;
 using System.IO;
 using TextToSpeechSentencePracticer.Code;
@@ -11,11 +12,8 @@ namespace TextToSpeechSentencePracticer.ViewModel
         public string CurText { get; set; }
         public WordHighlight CurHighlightRegion { get; set; }
 
-        public MainViewModel()
+        public MainViewModel(ITtsService ttsService)
         {
-            CurText = "xello mexicana YEHA its the eye!!!!!";
-            CurHighlightRegion = new WordHighlight(6, 7);
-
             var args = new CommandLineArgs(Environment.GetCommandLineArgs());
             if (args.ArgumentError)
             {
@@ -39,8 +37,18 @@ namespace TextToSpeechSentencePracticer.ViewModel
             var allLines = File.ReadAllLines(args.Filename);
 
             CurText = allLines[4];
+
+            ttsService.AddWordCallback(ttsService_wordCallback);
+
+            ttsService.SayAsync(args.Lang, CurText, () =>
+            {
+                CurHighlightRegion = null;
+            });
         }
 
-
+        private void ttsService_wordCallback(string text, int offset, int start, int length)
+        {
+            CurHighlightRegion = new WordHighlight(start, length);
+        }
     }
 }

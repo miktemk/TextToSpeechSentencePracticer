@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
+using Miktemk.TextToSpeech.Services;
 
 namespace TextToSpeechSentencePracticer.ViewModel
 {
@@ -10,6 +11,7 @@ namespace TextToSpeechSentencePracticer.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
+            SimpleIoc.Default.Register<ITtsService, TtsService>();
             SimpleIoc.Default.Register<MainViewModel>();
         }
 
