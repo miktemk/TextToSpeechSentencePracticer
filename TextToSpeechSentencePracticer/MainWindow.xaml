@@ -10,7 +10,12 @@
         Height="400"
         Title="TTS Language Practicer"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
-    
+
+    <Window.InputBindings>
+        <KeyBinding Key="Space" Command="{Binding GoNextSentence}"></KeyBinding>
+        <KeyBinding Key="Backspace" Command="{Binding RepeatCurSentence}"></KeyBinding>
+    </Window.InputBindings>
+
     <Grid x:Name="LayoutRoot">
 
         <myControls:TextBlockWithHighlight
