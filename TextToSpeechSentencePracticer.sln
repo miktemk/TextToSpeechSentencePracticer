@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miktemk.TextToSpeech", "..\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miktemk.Wpf", "..\MiktemkCommons\Miktemk.Wpf\Miktemk.Wpf.csproj", "{DA6804E9-85DE-43C1-854E-6ABB3C85D970}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZUnitTests", "ZUnitTests\ZUnitTests.csproj", "{A7456FAD-9507-44DE-A615-873A4BFCB842}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DA6804E9-85DE-43C1-854E-6ABB3C85D970}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA6804E9-85DE-43C1-854E-6ABB3C85D970}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA6804E9-85DE-43C1-854E-6ABB3C85D970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7456FAD-9507-44DE-A615-873A4BFCB842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7456FAD-9507-44DE-A615-873A4BFCB842}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7456FAD-9507-44DE-A615-873A4BFCB842}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7456FAD-9507-44DE-A615-873A4BFCB842}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

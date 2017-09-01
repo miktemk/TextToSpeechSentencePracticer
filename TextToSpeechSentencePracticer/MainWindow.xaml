@@ -5,38 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.galasoft.ch/ignore"
         mc:Ignorable="d ignore"
-        Height="300"
-        Width="300"
-        Title="MVVM Light Application"
+        xmlns:myControls="clr-namespace:TextToSpeechSentencePracticer.Controls"
+        Width="800"
+        Height="400"
+        Title="TTS Language Practicer"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Skins/MainSkin.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
-
     <Grid x:Name="LayoutRoot">
 
-        <!--<TextBlock FontSize="36"
-                   FontWeight="Bold"
-                   Foreground="Purple"
-                   Text="{Binding WelcomeTitle}"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   TextWrapping="Wrap" />-->
-        <TextBlock FontSize="36"
-                   FontWeight="Bold"
-                   Foreground="Purple"
-                   Text="{Binding WelcomeTitle}"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   TextWrapping="Wrap">
-            <Run Foreground="Red">Your_Text_1</Run>
-            <Run Foreground="Orange">Your_Text_2</Run>
-            <Run Foreground="purple">Your_Text_3</Run>
-        </TextBlock>
+        <myControls:TextBlockWithHighlight
+            Text="{Binding CurText}"
+            WordHighlight="{Binding CurHighlightRegion}"
+        ></myControls:TextBlockWithHighlight>
+        
     </Grid>
 </Window>
