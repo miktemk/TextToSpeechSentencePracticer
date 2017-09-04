@@ -1,4 +1,5 @@
-﻿using Mono.Options;
+﻿using Miktemk;
+using Mono.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace TextToSpeechSentencePracticer.Code
             // these are the available options, not that they set the variables
             options = new OptionSet {
                 { "l|lang=", $"TTS language. Default is {Lang}", x => Lang = x },
+                { "r|rate=", $"TTS rate", (int x) => Rate = x },
                 { "h|help", "show this message and exit", x => ShowHelp = x != null },
                 { "v", "increase debug message verbosity", x => IsVerbose = (x != null) },
                 //{ "f|file=", "Input file", x => Filename = x },
@@ -40,6 +42,7 @@ namespace TextToSpeechSentencePracticer.Code
 
         public bool ArgumentError { get; private set; } = false;
         public string Lang { get; private set; } = "en";
+        public int? Rate { get; private set; } = null;
         public bool ShowHelp { get; private set; } = false;
         public bool IsVerbose { get; private set; } = false;
         public string Filename { get; private set; }

@@ -48,6 +48,8 @@ namespace TextToSpeechSentencePracticer.ViewModel
                 System.Windows.Application.Current.Shutdown();
                 return;
             }
+            if (args.Rate != null)
+                ttsService.SetVoiceOverrideSpeed(args.Rate);
 
             // .... commands
             GoNextSentence = new RelayCommand(GoNextSentenceFn);
