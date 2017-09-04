@@ -7,7 +7,7 @@ verbi-test.bat
 verbi-drill.bat
 
     verbi -n=500 -o=zzztest.txt -v %1
-    START C:\_mik\vs\TextToSpeechSentencePracticer\TextToSpeechSentencePracticer\bin\Debug\TextToSpeechSentencePracticer.exe --rate=0 --lang=es zzztest.txt
+    START TextToSpeechSentencePracticer.exe --rate=0 --lang=es zzztest.txt
 
 phrasi.sublime-build
 
